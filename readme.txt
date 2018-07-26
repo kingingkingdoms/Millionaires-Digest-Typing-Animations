@@ -10,7 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Add the ability for the Millionaire's Digest to display animated typing effects created by the Founder & CEO of the Millionaire's Digest with special thanks and all credits going to zonnix for the original plugin.
+Add support for allowing the Millionaire's Digest to create and display animated typing effects created by the Founder & CEO of the Millionaire's Digest with special thanks and all credits going to zonnix for the original plugin.
 
 == Installation ==
 
