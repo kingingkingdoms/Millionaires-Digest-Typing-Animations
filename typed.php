@@ -1,12 +1,11 @@
 <?php
 /*
-  Plugin Name: Typed
-  Description: Typed Plugin created based on "typed.js" a jQuery plugin that types. Enter in any string, and watch it type at the speed you've set, backspace what it's typed, and begin a new sentence for however many strings you've set.
-  Version: 1.1.4
-  Author: zonnix
-  Author URI: http://zonnix.net
-  License: GPLv2 or later
- */
+Plugin Name: Millionaire's Digest Typing Animations
+Description: Add the ability for the Millionaire's Digest to display animated typing effects.
+Version: 1.0.0
+Author: K&L (Founder of the Millionaire's Digest)
+Author URI: https://millionairedigest.com/
+*/
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
@@ -33,20 +32,19 @@ if (!class_exists('Zon_Typed')) :
 
         public function typed_init() {
             $labels = array(
-                'name' => __('Typed', 'zon-typed'),
-                'singular_name' => __('Typed', 'zon-typed'),
-                'menu_name' => __('Typed', 'zon-typed'),
-                'name_admin_bar' => __('Book', 'zon-typed'),
+                'name' => __('Typing Animations', 'zon-typed'),
+                'singular_name' => __('Typing Animation', 'zon-typed'),
+                'menu_name' => __('Typing Animations', 'zon-typed'),
                 'add_new' => __('Add New', 'zon-typed'),
-                'add_new_item' => __('Add New Typed', 'zon-typed'),
-                'new_item' => __('New Typed', 'zon-typed'),
-                'edit_item' => __('Edit Typed', 'zon-typed'),
-                'view_item' => __('View Typed', 'zon-typed'),
-                'all_items' => __('All Typed List', 'zon-typed'),
-                'search_items' => __('Search Typed', 'zon-typed'),
-                'parent_item_colon' => __('Parent Typed:', 'zon-typed'),
-                'not_found' => __('No typed found.', 'zon-typed'),
-                'not_found_in_trash' => __('No typed found in Trash.', 'zon-typed')
+                'add_new_item' => __('Add New Animation', 'zon-typed'),
+                'new_item' => __('New Animation', 'zon-typed'),
+                'edit_item' => __('Edit Animation', 'zon-typed'),
+                'view_item' => __('View Animation', 'zon-typed'),
+                'all_items' => __('All Animations List', 'zon-typed'),
+                'search_items' => __('Search Animations', 'zon-typed'),
+                'parent_item_colon' => __('Parent Animation:', 'zon-typed'),
+                'not_found' => __('No animation found.', 'zon-typed'),
+                'not_found_in_trash' => __('No animation found in Trash.', 'zon-typed')
             );
 
             $args = array(
@@ -57,8 +55,8 @@ if (!class_exists('Zon_Typed')) :
                 'show_ui' => true,
                 'show_in_menu' => true,
                 'query_var' => true,
-                'rewrite' => array('slug' => 'typed'),
-                'capability_type' => 'post',
+                'rewrite' => array('slug' => 'typing-animation'),
+                'capability_type' => 'page',
                 'has_archive' => true,
                 'hierarchical' => false,
                 'menu_position' => null,
@@ -70,7 +68,7 @@ if (!class_exists('Zon_Typed')) :
 
         public function add_typed_meta() {
             add_meta_box('typed-perview', 'Perview', array($this, 'typed_perview_meta_box_callback'), 'typed');
-            add_meta_box('typed-options', 'Typed Options', array($this, 'typed_meta_box_callback'), 'typed');
+            add_meta_box('typed-options', 'Typing Options', array($this, 'typed_meta_box_callback'), 'typed');
             add_meta_box('typed-display-options', 'Display Options', array($this, 'typed_display_meta_box_callback'), 'typed');
         }
 
