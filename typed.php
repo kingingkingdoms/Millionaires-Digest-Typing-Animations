@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Millionaire's Digest Typing Animations
-Description: Add the ability for the Millionaire's Digest to display animated typing effects.
+Description: Add support for allowing the Millionaire's Digest to create and display animated typing effects.
 Version: 1.0.0
 Author: K&L (Founder of the Millionaire's Digest)
 Author URI: https://millionairedigest.com/
