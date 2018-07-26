@@ -1,5 +1,5 @@
 jQuery(document).ready(function (jQuery) {
-    jQuery('.typed_perview_div').each(function () {
+    jQuery('.typed_preview_div').each(function () {
         var strings = jQuery(this).attr('data-strings').split(';#$#;');
         var speed = jQuery(this).attr('data-speed');
         var delay = jQuery(this).attr('data-delay');
