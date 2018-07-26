@@ -54,10 +54,10 @@ if (!class_exists('Zon_Typed')) :
                 'publicly_queryable' => true,
                 'show_ui' => true,
                 'show_in_menu' => true,
-                'query_var' => true,
+                'query_var' => false,
                 'rewrite' => array('slug' => 'typing-animation'),
                 'capability_type' => 'page',
-                'has_archive' => true,
+                'has_archive' => false,
                 'hierarchical' => false,
                 'menu_position' => null,
                 'supports' => array('title')
@@ -67,12 +67,12 @@ if (!class_exists('Zon_Typed')) :
         }
 
         public function add_typed_meta() {
-            add_meta_box('typed-perview', 'Perview', array($this, 'typed_perview_meta_box_callback'), 'typed');
+            add_meta_box('typed-preview', 'Preview', array($this, 'typed_preview_meta_box_callback'), 'typed');
             add_meta_box('typed-options', 'Typing Options', array($this, 'typed_meta_box_callback'), 'typed');
             add_meta_box('typed-display-options', 'Display Options', array($this, 'typed_display_meta_box_callback'), 'typed');
         }
 
-        public function typed_perview_meta_box_callback($post) {
+        public function typed_preview_meta_box_callback($post) {
             $post_id = $post->ID;
             $typed_strings = get_post_meta($post_id, 'typed_strings', true);
             if (!$typed_strings)
@@ -149,7 +149,7 @@ if (!class_exists('Zon_Typed')) :
                 }
             </style>
             <div class="typed-div-<?php echo $post_id; ?>">    
-                <span style="white-space:pre;word-wrap: break-word;line-height: 1;" class="typed_perview_div" data-cursor-char="<?php echo get_post_meta($post_id, 'cursor_char', true); ?>" data-cursor="<?php echo get_post_meta($post_id, 'show_cursor', true); ?>" data-strings="<?php echo $strings; ?>" data-speed="<?php echo get_post_meta($post_id, 'type_speed', true); ?>" data-delay="<?php echo get_post_meta($post_id, 'start_delay', true); ?>" data-back-delay="<?php echo get_post_meta($post_id, 'back_delay', true); ?>" data-back-speed="<?php echo get_post_meta($post_id, 'back_speed', true); ?>" data-loop="<?php echo get_post_meta($post_id, 'typed_loop', true); ?>"></span>
+                <span style="white-space:pre;word-wrap: break-word;line-height: 1;" class="typed_preview_div" data-cursor-char="<?php echo get_post_meta($post_id, 'cursor_char', true); ?>" data-cursor="<?php echo get_post_meta($post_id, 'show_cursor', true); ?>" data-strings="<?php echo $strings; ?>" data-speed="<?php echo get_post_meta($post_id, 'type_speed', true); ?>" data-delay="<?php echo get_post_meta($post_id, 'start_delay', true); ?>" data-back-delay="<?php echo get_post_meta($post_id, 'back_delay', true); ?>" data-back-speed="<?php echo get_post_meta($post_id, 'back_speed', true); ?>" data-loop="<?php echo get_post_meta($post_id, 'typed_loop', true); ?>"></span>
             </div>
             <br><pre class="update-nag shorCode">Generated Shortcode: [typed id='<?php echo $post_id; ?>']</pre>
             <?php
@@ -463,7 +463,7 @@ if (!class_exists('Zon_Typed')) :
                         <?php endif; ?>
                     </style>
                     <div class="typed-div-<?php echo $post_id; ?>">                        
-                        <span style="white-space:pre;" class="typed_perview_div" data-cursor-char="<?php echo get_post_meta($post_id, 'cursor_char', true); ?>" data-cursor="<?php echo get_post_meta($post_id, 'show_cursor', true); ?>" data-strings="<?php echo $strings; ?>" data-speed="<?php echo get_post_meta($post_id, 'type_speed', true); ?>" data-delay="<?php echo get_post_meta($post_id, 'start_delay', true); ?>" data-back-delay="<?php echo get_post_meta($post_id, 'back_delay', true); ?>" data-back-speed="<?php echo get_post_meta($post_id, 'back_speed', true); ?>" data-loop="<?php echo get_post_meta($post_id, 'typed_loop', true); ?>"></span>
+                        <span style="white-space:pre;" class="typed_preview_div" data-cursor-char="<?php echo get_post_meta($post_id, 'cursor_char', true); ?>" data-cursor="<?php echo get_post_meta($post_id, 'show_cursor', true); ?>" data-strings="<?php echo $strings; ?>" data-speed="<?php echo get_post_meta($post_id, 'type_speed', true); ?>" data-delay="<?php echo get_post_meta($post_id, 'start_delay', true); ?>" data-back-delay="<?php echo get_post_meta($post_id, 'back_delay', true); ?>" data-back-speed="<?php echo get_post_meta($post_id, 'back_speed', true); ?>" data-loop="<?php echo get_post_meta($post_id, 'typed_loop', true); ?>"></span>
                     </div>
                     <?php
                 endif;
