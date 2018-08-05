@@ -40,7 +40,7 @@ if (!class_exists('Zon_Typed')) :
                 'new_item' => __('New Animation', 'zon-typed'),
                 'edit_item' => __('Edit Animation', 'zon-typed'),
                 'view_item' => __('View Animation', 'zon-typed'),
-                'all_items' => __('All Animations List', 'zon-typed'),
+                'all_items' => __('All Animations', 'zon-typed'),
                 'search_items' => __('Search Animations', 'zon-typed'),
                 'parent_item_colon' => __('Parent Animation:', 'zon-typed'),
                 'not_found' => __('No animation found.', 'zon-typed'),
